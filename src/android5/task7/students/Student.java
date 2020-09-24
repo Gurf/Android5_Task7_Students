@@ -36,9 +36,7 @@ public class Student extends Person {
     public static int maxModulesClosedForAll = 0;
 
     public Student( String na, String sn, int ag, int gn, int ts, int mc, Skill sk ) {
-        name = na;
-        surname = sn;
-        age = ag;
+        super( na, sn, ag);
         groupNumber = gn;
         taskSolved = ts;
         modulesClosed = mc;

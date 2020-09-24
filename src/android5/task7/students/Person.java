@@ -17,4 +17,10 @@ public class Person {
         return age;
     }
 
+    public Person( String na, String sn, int ag) {
+        name = na;
+        surname = sn;
+        age = ag;
+    }
+
 }

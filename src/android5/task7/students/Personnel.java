@@ -12,6 +12,10 @@ public class Personnel extends Person {
         return workPlace;
     }
 
+    public Personnel(String na, String sn, int ag) {
+        super(na, sn, ag);
+    }
+
     public void Encourage() {
 
     }
