@@ -12,8 +12,8 @@ public abstract class Personnel extends Person {
         return workPlace;
     }
 
-    public Personnel(String na, String sn, int ag) {
-        super(na, sn, ag);
+    public Personnel(String na, int ag) {
+        super(na, ag);
     }
 
     public void Encourage() {

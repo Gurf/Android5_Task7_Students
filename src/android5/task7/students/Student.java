@@ -34,8 +34,8 @@ public class Student extends Person {
     public static int taskSolvedForAll = 0;
     public static int maxModulesClosedForAll = 0;
 
-    public Student( String na, String sn, int ag, int gn, int ts, int mc, Skill sk, Discipline di ) {
-        super( na, sn, ag);
+    public Student( String na, int ag, int gn, int ts, int mc, Skill sk, Discipline di ) {
+        super( na, ag);
         groupNumber = gn;
         taskSolved = ts;
         modulesClosed = mc;
@@ -43,8 +43,8 @@ public class Student extends Person {
         discipline = di;
     }
 
-    public Student( String na, String sn, int ag ) {
-        this( na, sn, ag, 0, 0, 0, Skill.ABSENT, Discipline.JAVA);
+    public Student( String na, int ag ) {
+        this( na, ag, 0, 0, 0, Skill.ABSENT, Discipline.JAVA);
     }
 
     public void solveTask() {
@@ -78,7 +78,6 @@ public class Student extends Person {
         Student student = (Student) o;
         return
                 name.equals(student.name) &&
-                surname.equals(student.surname) &&
                 age == student.age &&
                 skill == student.skill &&
                 discipline == student.discipline;
@@ -86,14 +85,13 @@ public class Student extends Person {
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, age, skill, discipline);
+        return Objects.hash(name, age, skill, discipline);
     }
 
     @Override
     public String toString() {
         return "Student { " +
                 "  name='" + name + '\'' +
-                ", surname='" + surname + '\'' +
                 ", age=" + age +
                 ", groupNumber=" + groupNumber +
                 ", taskSolved=" + taskSolved +

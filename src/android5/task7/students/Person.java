@@ -6,20 +6,15 @@ public abstract class Person {
     public String getName() {
         return name;
     }
-
-    protected String surname;
-    public String getSurname() {
-        return surname;
-    }
+    public void setName(String nm) { name = nm; }
 
     protected int age;
     public int getAge() {
         return age;
     }
 
-    public Person( String na, String sn, int ag) {
+    public Person( String na, int ag) {
         name = na;
-        surname = sn;
         age = ag;
     }
 
