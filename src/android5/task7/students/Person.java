@@ -1,6 +1,6 @@
 package android5.task7.students;
 
-public class Person {
+public abstract class Person {
 
     protected String name;
     public String getName() {
@@ -23,4 +23,5 @@ public class Person {
         age = ag;
     }
 
+    public abstract void TellAboutYourself();
 }

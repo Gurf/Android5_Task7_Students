@@ -1,5 +1,7 @@
 package android5.task7.students;
 
+import java.util.Objects;
+
 enum Skill{
     Absent,
     Student,
@@ -30,6 +32,11 @@ public class Student extends Person {
     private Skill skill;
     public Skill getSkill() {
         return skill;
+    }
+
+    private String courseName;
+    public String getCourseName() {
+        return courseName;
     }
 
     public static int taskSolvedForAll = 0;
@@ -64,5 +71,42 @@ public class Student extends Person {
         else {
             System.out.println("Все модули пройдены !");
         }
+    }
+
+    @Override
+    public void TellAboutYourself() {
+        System.out.println("рассказ о студенте...");
+    }
+
+    @Override
+    public boolean equals(Object o) {
+        if (this == o) return true;
+        if (o == null || getClass() != o.getClass()) return false;
+        Student student = (Student) o;
+        return
+                name.equals(student.name) &&
+                surname.equals(student.surname) &&
+                age == student.age &&
+                skill == student.skill &&
+                courseName.equals(student.courseName);
+    }
+
+    @Override
+    public int hashCode() {
+        return Objects.hash(name, surname, age, skill, courseName);
+    }
+
+    @Override
+    public String toString() {
+        return "Student { " +
+                "  name='" + name + '\'' +
+                ", surname='" + surname + '\'' +
+                ", age=" + age +
+                ", groupNumber=" + groupNumber +
+                ", taskSolved=" + taskSolved +
+                ", modulesClosed=" + modulesClosed +
+                ", skill=" + skill +
+                ", courseName='" + courseName + "'" +
+                " } ";
     }
 }

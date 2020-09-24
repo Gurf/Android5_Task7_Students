@@ -10,4 +10,9 @@ public class Mentor extends Personnel {
     public void HoldTheMeeting() {
 
     }
+
+    @Override
+    public void TellAboutYourself() {
+        System.out.println("Рассказ о кураторе...");
+    }
 }

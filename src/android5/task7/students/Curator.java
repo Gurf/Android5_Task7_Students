@@ -8,4 +8,9 @@ public class Curator extends Personnel {
     public void AnswerTheQuestion(){
 
     }
+
+    @Override
+    public void TellAboutYourself() {
+        System.out.println("Рассказ о кураторе...");
+    }
 }

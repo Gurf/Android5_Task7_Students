@@ -1,6 +1,6 @@
 package android5.task7.students;
 
-public class Personnel extends Person {
+public abstract class Personnel extends Person {
 
     private int supervisedGroupNumber;
     public int getSupervisedGroupNumber() {
@@ -23,4 +23,7 @@ public class Personnel extends Person {
     public void ShareUsefulInformation() {
 
     }
+
+    @Override
+    public abstract void TellAboutYourself();
 }
