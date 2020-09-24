@@ -2,14 +2,6 @@ package android5.task7.students;
 
 import java.util.Objects;
 
-enum Skill{
-    Absent,
-    Student,
-    Junior,
-    Middle,
-    Senior
-}
-
 public class Student extends Person {
 
     public static final int MAX_MODULE_COUNT = 20;
@@ -34,24 +26,25 @@ public class Student extends Person {
         return skill;
     }
 
-    private String courseName;
-    public String getCourseName() {
-        return courseName;
+    private Discipline discipline;
+    public  Discipline getDiscipline() {
+        return discipline;
     }
 
     public static int taskSolvedForAll = 0;
     public static int maxModulesClosedForAll = 0;
 
-    public Student( String na, String sn, int ag, int gn, int ts, int mc, Skill sk ) {
+    public Student( String na, String sn, int ag, int gn, int ts, int mc, Skill sk, Discipline di ) {
         super( na, sn, ag);
         groupNumber = gn;
         taskSolved = ts;
         modulesClosed = mc;
         skill = sk;
+        discipline = di;
     }
 
     public Student( String na, String sn, int ag ) {
-        this( na, sn, ag, 0, 0, 0, Skill.Absent);
+        this( na, sn, ag, 0, 0, 0, Skill.ABSENT, Discipline.JAVA);
     }
 
     public void solveTask() {
@@ -88,12 +81,12 @@ public class Student extends Person {
                 surname.equals(student.surname) &&
                 age == student.age &&
                 skill == student.skill &&
-                courseName.equals(student.courseName);
+                discipline == student.discipline;
     }
 
     @Override
     public int hashCode() {
-        return Objects.hash(name, surname, age, skill, courseName);
+        return Objects.hash(name, surname, age, skill, discipline);
     }
 
     @Override
@@ -106,7 +99,7 @@ public class Student extends Person {
                 ", taskSolved=" + taskSolved +
                 ", modulesClosed=" + modulesClosed +
                 ", skill=" + skill +
-                ", courseName='" + courseName + "'" +
+                ", discipline='" + discipline + "'" +
                 " } ";
     }
 }
