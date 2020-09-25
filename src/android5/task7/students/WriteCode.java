@@ -6,7 +6,8 @@ public class WriteCode extends Task {
         super(mn);
     }
 
+    @Override
     public void Complete() {
-        System.out.println("Задание написать код завершено.");
+        System.out.println("    Задание написать код выполняется.");
     }
 }

@@ -1,6 +1,6 @@
 package android5.task7.students;
 
-public class Curator extends Personnel {
+public class Curator extends Staff {
     public Curator(String na, int ag) {
         super(na, ag);
     }

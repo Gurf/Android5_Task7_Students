@@ -6,12 +6,13 @@ public class Test extends Task implements Autochecked {
         super(mn);
     }
 
+    @Override
     public void Complete() {
-        System.out.println("Тест завершен.");
+        System.out.println("    Тест выполняется.");
     }
 
     @Override
     public void checkAutomatically() {
-        System.out.println("Тут происходит автоматическая проверка.");
+        System.out.println("    Тут происходит автоматическая проверка.");
     }
 }
