@@ -76,6 +76,7 @@ public class Student extends Person {
         modulesClosed = mc;
         skill = sk;
         discipline = di;
+        mentor = me;
     }
 
     public Student( String na, int ag, Discipline di, Mentor me ) {
@@ -83,7 +84,7 @@ public class Student extends Person {
     }
 
     private void solveOneTask(Task ts) {
-        System.out.println("Студент " + name + "начинает выполнение задание");
+        System.out.println("Студент " + name + " начинает выполнение задание");
 
         ts.Complete();
         if( !(ts instanceof Autochecked) ) {
@@ -101,7 +102,7 @@ public class Student extends Person {
     {
         if( taskSolved>=len ) {
             allTasksCompleted = true;
-            System.out.println("Все Задачи решены !");
+            System.out.println("Все задачи решены студентом " + name + " !  ========================================");
         }
     }
 

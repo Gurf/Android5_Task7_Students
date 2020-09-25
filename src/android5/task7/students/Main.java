@@ -33,8 +33,10 @@ public class Main {
     public static void main(String[] args) {
         for( int s=0; s<4; s++ ) {
             Student currSt = students[s];
-            int taskCount = random.nextInt(9);
             do {
+                int taskCount = 1 + random.nextInt(8);
+
+                System.out.println("Студент " + currSt.getName() + " пытается выполнить " + taskCount + " задач, он/она уже решил(а) " + currSt.getTaskSolved() + " задач -----------");
                 currSt.SolveTasks(taskCount, tasks);
             }
             while( currSt.getAllTasksCompleted()==false );
