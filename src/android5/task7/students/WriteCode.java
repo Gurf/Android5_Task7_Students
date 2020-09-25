@@ -2,8 +2,11 @@ package android5.task7.students;
 
 public class WriteCode extends Task {
 
-    public WriteCode(int mn) {
-        super(mn);
+    private String answer;
+
+    public WriteCode(int mn, int nu, String te) {
+        super(mn,nu,te);
+        answer = new String();
     }
 
     @Override

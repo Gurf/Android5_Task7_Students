@@ -82,9 +82,7 @@ public class Student extends Person {
         System.out.println("Начинаем выполнение задания");
 
         ts.Complete();
-        if( ts instanceof Autochecked )
-            ((Autochecked) ts).checkAutomatically();
-        else {
+        if( !(ts instanceof Autochecked) ) {
             boolean notChecked = true;
             do {
                 notChecked = !(mentor.CheckTheTask(ts));
