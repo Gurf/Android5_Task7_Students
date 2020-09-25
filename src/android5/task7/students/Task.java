@@ -2,7 +2,7 @@ package android5.task7.students;
 
 public abstract class Task {
 
-    private int number;
+    protected int number;
     public int getNumber() { return number; }
 
     private int moduleNumber;

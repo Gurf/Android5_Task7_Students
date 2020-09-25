@@ -11,7 +11,7 @@ public class DragAndDrop extends Task implements Autochecked  {
 
     @Override
     public void Complete() {
-        System.out.println("    DragAndDrop задание выполняется.");
+        System.out.println("    DragAndDrop " + number + " задание выполняется.");
         checkAutomatically();
     }
 }

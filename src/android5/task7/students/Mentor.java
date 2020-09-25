@@ -7,7 +7,7 @@ public class Mentor extends Staff {
     }
 
     public boolean CheckTheTask(Task ts) {
-        System.out.println("    Ментор проверяет задачу.");
+        System.out.println("    Ментор " + name + " проверяет задачу.");
         return true;
     }
 

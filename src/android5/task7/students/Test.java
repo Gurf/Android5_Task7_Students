@@ -11,7 +11,7 @@ public class Test extends Task implements Autochecked {
 
     @Override
     public void Complete() {
-        System.out.println("    Тест выполняется.");
+        System.out.println("    Тест " + number + " выполняется.");
         checkAutomatically();
     }
 }

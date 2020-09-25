@@ -66,7 +66,7 @@ public class Student extends Person {
     }
 
     public Student( String na, int ag, int gn, int ts, int mc, Skill sk, Discipline di, Mentor me) {
-        super( na, ag);
+        super( na, ag );
         groupNumber = gn;
         taskSolved = ts;
         modulesClosed = mc;
@@ -74,12 +74,12 @@ public class Student extends Person {
         discipline = di;
     }
 
-    public Student( String na, int ag, Mentor me ) {
-        this( na, ag, 0, 0, 0, Skill.ABSENT, Discipline.JAVA, me);
+    public Student( String na, int ag, Discipline di, Mentor me ) {
+        this( na, ag, 0, 0, 0, Skill.ABSENT, di, me );
     }
 
     private void solveOneTask(Task ts) {
-        System.out.println("Начинаем выполнение задания");
+        System.out.println("Студент " + name + "начинает выполнение задание");
 
         ts.Complete();
         if( !(ts instanceof Autochecked) ) {
@@ -90,7 +90,7 @@ public class Student extends Person {
         }
         taskSolved++;
         taskSolvedForAll++;
-        System.out.println("Заканчиваем выполнение задания");
+        System.out.println("Заканчивает выполнение задание");
     }
 
     private void CheckAllTaskSolved(int len)
