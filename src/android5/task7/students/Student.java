@@ -46,8 +46,15 @@ public class Student extends Person {
         discipline = ds;
     }
 
-    public static int taskSolvedForAll = 0;
-    public static int maxModulesClosedForAll = 0;
+    private static int taskSolvedForAll = 0;
+    public  static int getTaskSolvedForAll() {
+        return taskSolvedForAll;
+    }
+
+    private static int maxModulesClosedForAll = 0;
+    public  static int getMaxModulesClosedForAll() {
+        return maxModulesClosedForAll;
+    }
 
     private Mentor mentor;
     public  Mentor getMentor() {
@@ -57,12 +64,9 @@ public class Student extends Person {
         mentor = mn;
     }
 
-    public boolean allTasksCompleted = false;
-    public boolean getAllTasksCompleted() {
+    private boolean allTasksCompleted = false;
+    public  boolean getAllTasksCompleted() {
         return allTasksCompleted;
-    }
-    public void setAllTasksCompleted(boolean atc) {
-        allTasksCompleted = atc;
     }
 
     public Student( String na, int ag, int gn, int ts, int mc, Skill sk, Discipline di, Mentor me) {

@@ -5,10 +5,10 @@ public abstract class Task {
     protected int number;
     public int getNumber() { return number; }
 
-    private int moduleNumber;
+    protected int moduleNumber;
     public int getModuleNumber() { return moduleNumber; }
 
-    private String text;
+    protected String text;
     public String getText() { return text; }
 
     public Task(int mn, int nu, String te) {
