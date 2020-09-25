@@ -2,16 +2,16 @@ package android5.task7.students;
 
 public class Test extends Task implements Autochecked {
 
-    public Test(int mn) {
-        super(mn);
-    }
+    private String[] answer;
 
-    public void Complete() {
-        System.out.println("Тест завершен.");
+    public Test(int mn, int nu, String te) {
+        super(mn,nu,te);
+        answer = new String[3];
     }
 
     @Override
-    public void checkAutomatically() {
-        System.out.println("Тут происходит автоматическая проверка.");
+    public void Complete() {
+        System.out.println("    Тест " + number + " выполняется.");
+        checkAutomatically();
     }
 }

@@ -7,50 +7,119 @@ public class Student extends Person {
     public static final int MAX_MODULE_COUNT = 20;
 
     private int groupNumber;
-    public int getGroupNumber() {
+    public int  getGroupNumber() {
         return groupNumber;
+    }
+    public void setGroupNumber(int gn) {
+        groupNumber = gn;
     }
 
     private int taskSolved;
     public int getTaskSolved() {
         return taskSolved;
     }
+    public void setTaskSolved(int ts) {
+        taskSolved = ts;
+    }
 
     private int modulesClosed;
-    public int getModulesClosed() {
+    public  int getModulesClosed() {
         return modulesClosed;
+    }
+    public  void setModulesClosed(int mc) {
+        modulesClosed = mc;
     }
 
     private Skill skill;
-    public Skill getSkill() {
+    public  Skill getSkill() {
         return skill;
+    }
+    public  void setSkill(Skill sk) {
+        skill = sk;
     }
 
     private Discipline discipline;
     public  Discipline getDiscipline() {
         return discipline;
     }
+    public  void setDiscipline(Discipline ds) {
+        discipline = ds;
+    }
 
-    public static int taskSolvedForAll = 0;
-    public static int maxModulesClosedForAll = 0;
+    private static int taskSolvedForAll = 0;
+    public  static int getTaskSolvedForAll() {
+        return taskSolvedForAll;
+    }
 
-    public Student( String na, int ag, int gn, int ts, int mc, Skill sk, Discipline di ) {
-        super( na, ag);
+    private static int maxModulesClosedForAll = 0;
+    public  static int getMaxModulesClosedForAll() {
+        return maxModulesClosedForAll;
+    }
+
+    private Mentor mentor;
+    public  Mentor getMentor() {
+        return mentor;
+    }
+    public  void setMentor(Mentor mn) {
+        mentor = mn;
+    }
+
+    private boolean allTasksCompleted = false;
+    public  boolean getAllTasksCompleted() {
+        return allTasksCompleted;
+    }
+
+    public Student( String na, int ag, int gn, int ts, int mc, Skill sk, Discipline di, Mentor me) {
+        super( na, ag );
         groupNumber = gn;
         taskSolved = ts;
         modulesClosed = mc;
         skill = sk;
         discipline = di;
+        mentor = me;
     }
 
-    public Student( String na, int ag ) {
-        this( na, ag, 0, 0, 0, Skill.ABSENT, Discipline.JAVA);
+    public Student( String na, int ag, Discipline di, Mentor me ) {
+        this( na, ag, 0, 0, 0, Skill.ABSENT, di, me );
     }
 
-    public void solveTask() {
-        System.out.println("Задание решено !");
+    private void solveOneTask(Task ts) {
+        System.out.println("Студент " + name + " начинает выполнение задание");
+
+        ts.Complete();
+        if( !(ts instanceof Autochecked) ) {
+            boolean notChecked = true;
+            do {
+                notChecked = !(mentor.CheckTheTask(ts));
+            } while ( notChecked );
+        }
         taskSolved++;
         taskSolvedForAll++;
+        System.out.println("Заканчивает выполнение задание");
+    }
+
+    private void CheckAllTaskSolved(int len)
+    {
+        if( taskSolved>=len ) {
+            allTasksCompleted = true;
+            System.out.println("Все задачи решены студентом " + name + " !  ========================================");
+        }
+    }
+
+    public void SolveTasks(int tc, Task[] tasks) {
+
+        int len;
+        if( taskSolved+tc > tasks.length )
+            len = tasks.length;
+        else
+            len = taskSolved+tc;
+
+        for( int i=taskSolved; i<len; i++ ) {
+            Task currTask = tasks[i];
+            solveOneTask( currTask );
+        }
+
+        CheckAllTaskSolved(tasks.length);
     }
 
     public void closeModule() {

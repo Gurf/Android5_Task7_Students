@@ -12,6 +12,7 @@ public abstract class Person {
     public int getAge() {
         return age;
     }
+    public void setAge(int ag) { age = ag; }
 
     public Person( String na, int ag) {
         name = na;
